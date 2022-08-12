@@ -2,13 +2,21 @@ import { useEffect, useState } from "react";
 import React from "react";
 import "./App.css";
 import { db } from "./firebase-config";
-import { addDoc, collection, doc, getDocs } from "firebase/firestore";
+import { collection, getDocs } from "firebase/firestore";
 
 import Image from "./components/Image";
 import Header from "./components/Header";
+import CharSelector from "./components/CharSelector";
 
 function App() {
   const [locations, setLocations] = useState([]);
+  const [vaderIsFound, setVaderIsFound] = useState(false);
+  const [yodaIsFound, setYodaIsFound] = useState(false);
+  const [c3poIsFound, setC3poIsFound] = useState(false);
+  const [selectMenuIsShown, setSelectMenuIsShown] = useState(false);
+  const [selectMenuLocation, setSelectMenuLocation] = useState({ x: 0, y: 0 });
+  const [clickLocation, setClickLocation] = useState({ x: 0, y: 0 });
+
   const locationCollectionRef = collection(db, "locations");
 
   useEffect(() => {
@@ -23,6 +31,13 @@ function App() {
     return coordinate >= min && coordinate <= max;
   };
 
+  const showMenu = (event) => {
+    const { pageX, pageY } = event;
+
+    setSelectMenuLocation({ x: pageX, y: pageY });
+    setSelectMenuIsShown(true);
+  };
+
   const handleClick = (event) => {
     const { width, height } = event.target.getBoundingClientRect();
     const { offsetX, offsetY } = event.nativeEvent;
@@ -30,17 +45,40 @@ function App() {
     const x = Math.round((offsetX / width) * 100);
     const y = Math.round((offsetY / height) * 100);
 
-    const { minX, maxX, minY, maxY } = locations[0].vader;
+    setClickLocation({ x: x, y: y });
+    showMenu(event);
+  };
+
+  const handleGuess = (character) => {
+    const { x, y } = clickLocation;
+    const arrayLocation = locations[0];
+
+    const { minX, maxX, minY, maxY } = arrayLocation[character];
 
     if (between(x, minX, maxX) && between(y, minY, maxY)) {
-      console.log("success!");
+      switch (character) {
+        case "vader":
+          setVaderIsFound(true);
+          break;
+        case "yoda":
+          setYodaIsFound(true);
+          break;
+        case "c3po":
+          setC3poIsFound(true);
+          break;
+        default:
+          break;
+      }
     }
+    setSelectMenuIsShown(false);
   };
 
   return (
     <div className="App">
-      <div>{console.log(locations[0])}</div>
-      <Header />
+      <Header vader={vaderIsFound} yoda={yodaIsFound} c3po={c3poIsFound} />
+      {selectMenuIsShown && (
+        <CharSelector handleGuess={handleGuess} location={selectMenuLocation} />
+      )}
       <Image click={handleClick} />
     </div>
   );
