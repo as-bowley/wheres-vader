@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import React from "react";
 import "./App.css";
-// import { db } from "./firebase-config";
-// import { collection, getDocs } from "firebase/firestore";
+import { db } from "./firebase-config";
+import { collection, getDocs } from "firebase/firestore";
 
 import StartScreen from "./components/StartScreen";
 import Image from "./components/Image";
@@ -11,13 +11,7 @@ import CharSelector from "./components/CharSelector";
 import GameOver from "./components/GameOver";
 
 function App() {
-  const [locations, setLocations] = useState([
-    {
-      vader: { minX: 91, maxX: 94, minY: 34, maxY: 37 },
-      yoda: { minX: 23, maxX: 26, minY: 27, maxY: 30 },
-      c3po: { minX: 87, maxX: 91, minY: 63, maxY: 64 },
-    },
-  ]);
+  const [locations, setLocations] = useState([]);
   const [vaderIsFound, setVaderIsFound] = useState(false);
   const [yodaIsFound, setYodaIsFound] = useState(false);
   const [c3poIsFound, setC3poIsFound] = useState(false);
@@ -31,15 +25,15 @@ function App() {
   const [score, setScore] = useState(0);
   const [isGameOver, setIsGameOver] = useState(false);
 
-  // const locationCollectionRef = collection(db, "locations");
+  const locationCollectionRef = collection(db, "locations");
 
-  // useEffect(() => {
-  //   const getLocation = async () => {
-  //     const data = await getDocs(locationCollectionRef);
-  //     setLocations(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
-  //   };
-  //   getLocation();
-  // }, []);
+  useEffect(() => {
+    const getLocation = async () => {
+      const data = await getDocs(locationCollectionRef);
+      setLocations(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
+    };
+    getLocation();
+  }, []);
 
   useEffect(() => {
     if (isGameRunning) {
@@ -127,7 +121,6 @@ function App() {
   const startGame = () => {
     setIsGameRunning(true);
     setGameTime(0);
-    setGameNotification("");
     setC3poIsFound(false);
     setYodaIsFound(false);
     setVaderIsFound(false);
@@ -139,8 +132,8 @@ function App() {
     if (yodaIsFound && c3poIsFound && vaderIsFound) {
       setScore(gameTime);
       setIsGameRunning(false);
-      setGameNotification("You found them all! Congratulations!");
       setIsGameOver(true);
+      setNotifIsShown(false);
     }
     setNotifIsShown(true);
   };

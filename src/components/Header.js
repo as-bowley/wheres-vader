@@ -3,6 +3,7 @@ import GameNotifs from "./GameNotifs";
 import vaderPic from "./image/vader.jpg";
 import yodaPic from "./image/yoda.jpg";
 import c3poPic from "./image/c3po.jpg";
+import logo from "./image/logo.png";
 
 const Header = ({
   vader,
@@ -14,21 +15,21 @@ const Header = ({
 }) => {
   return (
     <div className="header">
+      <img src={logo} height="100px" alt="logo" />
       <div className="header--characters">
-        <h1>Find these characters: </h1>
         <img
           src={vaderPic}
-          className={`header--vader ${vader ? "found" : ""}`}
+          className={`header--charimg ${vader ? "found" : ""}`}
           alt="darth vader"
         />
         <img
           src={yodaPic}
-          className={`header--vader ${yoda ? "found" : ""}`}
+          className={`header--charimg ${yoda ? "found" : ""}`}
           alt="yoda"
         />
         <img
           src={c3poPic}
-          className={`header--vader ${c3po ? "found" : ""}`}
+          className={`header--charimg ${c3po ? "found" : ""}`}
           alt="c-3po"
         />
       </div>
