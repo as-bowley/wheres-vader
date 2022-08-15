@@ -122,6 +122,22 @@ body {
   opacity: 0.3;
 }
 
+.header--credits {
+  margin-right: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-size: 1.3rem;
+  letter-spacing: 0.05rem;
+}
+
+.header--credits > p > a {
+  text-decoration: none;
+  color: #fff;
+  cursor: pointer;
+}
+
 .gameNotifs {
   position: absolute;
   top: 100%;

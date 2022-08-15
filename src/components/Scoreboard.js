@@ -28,7 +28,10 @@ const Scoreboard = ({ score }) => {
   }, [scores]);
 
   const addScore = async () => {
-    await addDoc(leaderboardCollectionRef, { name: newName, score: score });
+    await addDoc(leaderboardCollectionRef, {
+      name: newName === "" ? "anonymous" : newName,
+      score: score,
+    });
     setHasSubmitted(true);
   };
 

@@ -4,7 +4,7 @@ import Scoreboard from "./Scoreboard";
 const GameOver = ({ score, startGame }) => {
   return (
     <div className="gameOverScreen">
-      <button onClick={startGame}>Try again!</button>
+      <button onClick={startGame}>Restart</button>
       <Scoreboard score={score} />
     </div>
   );

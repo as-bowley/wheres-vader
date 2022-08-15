@@ -34,6 +34,19 @@ const Header = ({
         />
       </div>
       <h1 className="header--timer">Time: {timer}</h1>
+      <div className="header--credits">
+        <p>
+          Artist:
+          <a
+            href="https://www.behance.net/gusmorais"
+            target="_blank"
+            rel="noreferrer"
+          >
+            {" "}
+            Gus Morais
+          </a>
+        </p>
+      </div>
       {gameNotificationIsShown && (
         <GameNotifs gameNotification={gameNotification} />
       )}
