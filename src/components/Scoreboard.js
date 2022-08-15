@@ -57,7 +57,7 @@ const Scoreboard = ({ score }) => {
       <div className="leaderboard">
         {orderedScores.map((score) => {
           return (
-            <div className="scoreboard--entry" key={uniqid()}>
+            <div className="scoreboard__entry" key={uniqid()}>
               <p>{score.name}</p>
               <strong>{score.score} seconds</strong>
             </div>

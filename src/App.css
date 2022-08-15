@@ -17,11 +17,11 @@ body {
   background: url("./components/image/gamebg.jpg");
 }
 
-.startScreen--logo {
+.startScreen__logo {
   margin-bottom: 5rem;
 }
 
-.startScreen > .gameDetails {
+.startScreen > .startscreen__gameDetails {
   font-family: Arial, Helvetica, sans-serif;
   border: 5px solid #fff;
   border-radius: 8px;
@@ -35,36 +35,36 @@ body {
   align-items: center;
 }
 
-.startScreen > .gameDetails > h2 {
+.startScreen > .startscreen__gameDetails > h2 {
   font-size: 1.5rem;
   text-decoration: underline;
   align-self: baseline;
 }
 
-.startScreen > .gameDetails > p {
+.startScreen > .startscreen__gameDetails > p {
   font-size: 1.5rem;
   padding: 10px 0;
 }
 
-.startScreen--characters {
+.startScreen__characters {
   display: flex;
   align-items: center;
   padding: 20px 10px;
 }
 
-.startScreen--characters > div {
+.startScreen__characters > div {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.startScreen--characters > div > .startScreen--charimg {
+.startScreen__characters > div > .startScreen__charimg {
   height: 150px;
   border-radius: 50%;
   margin: 3rem 3rem 0.5rem 3rem;
 }
 
-.startScreen > .gameDetails > button {
+.startScreen > .startscreen__gameDetails > button {
   background-color: #fff;
   padding: 5px 15px;
   border: none;
@@ -77,7 +77,7 @@ body {
   align-self: center;
 }
 
-.waldo--img {
+.game__image {
   max-width: 100%;
 }
 
@@ -97,7 +97,7 @@ body {
   margin-left: 2rem;
 }
 
-.header--timer {
+.header__timer {
   margin-right: 20px;
   padding: 10px 20px 10px 20px;
   width: 10%;
@@ -105,24 +105,24 @@ body {
   justify-content: center;
 }
 
-.header--characters {
+.header__characters {
   display: flex;
   align-items: center;
   height: 80px;
   padding: 10px 0 10px 0;
 }
 
-.header--charimg {
+.header__charimg {
   width: 80px;
   border-radius: 50%;
   margin: 0 2rem 0 2rem;
 }
 
-.header--charimg.found {
+.header__charimg.found {
   opacity: 0.3;
 }
 
-.header--credits {
+.header__credits {
   margin-right: 2rem;
   display: flex;
   justify-content: center;
@@ -132,7 +132,7 @@ body {
   letter-spacing: 0.05rem;
 }
 
-.header--credits > p > a {
+.header__credits > p > a {
   text-decoration: none;
   color: #fff;
   cursor: pointer;
@@ -217,14 +217,14 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-.scoreboard--entry {
+.scoreboard__entry {
   display: flex;
   justify-content: space-between;
   border-bottom: 2px solid #fff;
   align-items: center;
 }
 
-.scoreboard--entry:last-child {
+.scoreboard__entry:last-child {
   border-bottom: none;
 }
 

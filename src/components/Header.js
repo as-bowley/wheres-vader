@@ -16,25 +16,25 @@ const Header = ({
   return (
     <div className="header">
       <img src={logo} height="100px" alt="logo" />
-      <div className="header--characters">
+      <div className="header__characters">
         <img
           src={vaderPic}
-          className={`header--charimg ${vader ? "found" : ""}`}
+          className={`header__charimg ${vader ? "found" : ""}`}
           alt="darth vader"
         />
         <img
           src={yodaPic}
-          className={`header--charimg ${yoda ? "found" : ""}`}
+          className={`header__charimg ${yoda ? "found" : ""}`}
           alt="yoda"
         />
         <img
           src={c3poPic}
-          className={`header--charimg ${c3po ? "found" : ""}`}
+          className={`header__charimg ${c3po ? "found" : ""}`}
           alt="c-3po"
         />
       </div>
-      <h1 className="header--timer">Time: {timer}</h1>
-      <div className="header--credits">
+      <h1 className="header__timer">Time: {timer}</h1>
+      <div className="header__credits">
         <p>
           Artist:
           <a

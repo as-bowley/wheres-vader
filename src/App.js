@@ -125,6 +125,7 @@ function App() {
     setYodaIsFound(false);
     setVaderIsFound(false);
     setIsGameOver(false);
+    setGameNotification("");
     setNotifIsShown(false);
   };
 
@@ -133,7 +134,6 @@ function App() {
       setScore(gameTime);
       setIsGameRunning(false);
       setIsGameOver(true);
-      setNotifIsShown(false);
     }
     setNotifIsShown(true);
   };

@@ -6,7 +6,7 @@ const Image = ({ click }) => {
     <img
       src={image}
       alt="Where's waldo style pic"
-      className="waldo--img"
+      className="game__image"
       onClick={click}
     />
   );
