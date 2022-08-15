@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/wheres-waldo/static/css/main.06ee47e6.css",
+    "main.js": "/wheres-waldo/static/js/main.79c22deb.js",
+    "static/js/787.4ce2c4d5.chunk.js": "/wheres-waldo/static/js/787.4ce2c4d5.chunk.js",
+    "static/media/waldopic.jpeg": "/wheres-waldo/static/media/waldopic.cc3603efdacb261712cf.jpeg",
+    "static/media/gamebg.jpg": "/wheres-waldo/static/media/gamebg.0380645e9e52830ab25a.jpg",
+    "static/media/yoda.jpg": "/wheres-waldo/static/media/yoda.6ffa5ca387bd3a0905db.jpg",
+    "static/media/vader.jpg": "/wheres-waldo/static/media/vader.f36164d3434fdef34e05.jpg",
+    "static/media/c3po.jpg": "/wheres-waldo/static/media/c3po.69915c5dd0adff8db00b.jpg",
+    "static/media/logo.png": "/wheres-waldo/static/media/logo.130c06e6a89a7eed8a44.png",
+    "index.html": "/wheres-waldo/index.html",
+    "main.06ee47e6.css.map": "/wheres-waldo/static/css/main.06ee47e6.css.map",
+    "main.79c22deb.js.map": "/wheres-waldo/static/js/main.79c22deb.js.map",
+    "787.4ce2c4d5.chunk.js.map": "/wheres-waldo/static/js/787.4ce2c4d5.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.06ee47e6.css",
+    "static/js/main.79c22deb.js"
+  ]
+}
